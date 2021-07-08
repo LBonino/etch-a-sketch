@@ -1,0 +1,1 @@
+let squareGridSize = 16;
