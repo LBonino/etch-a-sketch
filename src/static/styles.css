@@ -5,3 +5,17 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+@font-face {
+    font-family: "cabinSketch";
+    src: url("fonts/CabinSketch-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#title {
+    color: whitesmoke;
+    text-shadow: -1px -1px 5px black;
+    font-family: "cabinSketch";
+    font-size: 3rem;
+}
