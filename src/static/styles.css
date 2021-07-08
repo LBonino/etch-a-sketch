@@ -1,4 +1,7 @@
 body {
     margin: 0;
     background: linear-gradient(to top, #4e54c8, #8f94fb) no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
