@@ -19,3 +19,20 @@ body {
     font-family: "cabinSketch";
     font-size: 3rem;
 }
+
+#grid-container {
+    height: 34vw;
+    width: 34vw;
+    background-color: white;
+    border: solid 5px black;
+    border-radius: 8px;
+    box-shadow: -3px 3px 20px rgb(36, 42, 151);
+    display: grid;
+}
+
+@media screen and (orientation: portrait) {
+    #grid-container {
+        height: 34vh;
+        width: 34vh;
+    }
+}
