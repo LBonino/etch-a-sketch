@@ -12,7 +12,7 @@ function paintElement() {
 }
 
 function changeColor() {
-    grid.dataset.color = this.value;
+    grid.dataset.color = (this.id === "random-color") ? "random" : this.value;
 }
 
 function insertSquareGridElements(grid, squareGridSize) {
@@ -38,8 +38,6 @@ const colorPicker = document.querySelector("#color-picker");
 colorPicker.addEventListener("input", changeColor);
 
 const randomColorButton = document.querySelector("#random-color");
-randomColorButton.addEventListener("click", () => {
-    grid.dataset.color = "random";
-})
+randomColorButton.addEventListener("click", changeColor)
 
 insertSquareGridElements(grid, squareGridSize);
