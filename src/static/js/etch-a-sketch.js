@@ -1,3 +1,11 @@
+function getRandomRgbString() {
+    function getRandomRgb() {
+        return Math.floor(Math.random() * 256);
+    }
+
+    return `rgb(${getRandomRgb()}, ${getRandomRgb()}, ${getRandomRgb()})`;
+}
+
 function paintElement() {
     this.style.backgroundColor = grid.dataset.color;
 }
