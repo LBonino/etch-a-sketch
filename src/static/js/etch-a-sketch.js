@@ -7,7 +7,8 @@ function getRandomRgbString() {
 }
 
 function paintElement() {
-    this.style.backgroundColor = grid.dataset.color;
+    this.style.backgroundColor = (this.parentNode.dataset.color === "random") ? 
+                                getRandomRgbString() : this.parentNode.dataset.color;
 }
 
 function changeColor() {
