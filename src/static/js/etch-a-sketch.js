@@ -1,6 +1,3 @@
-let squareGridSize = 16**2;
-const grid = document.querySelector("#grid-container");
-
 function insertSquareGridElements(grid, squareGridSize) {
     grid.style.gridTemplate = `repeat(${squareGridSize**(1/2)}, 1fr) /
                                repeat(${squareGridSize**(1/2)}, 1fr)`;
@@ -13,5 +10,8 @@ function insertSquareGridElements(grid, squareGridSize) {
         grid.appendChild(gridElement);
     }
 }
+
+let squareGridSize = 16**2;
+const grid = document.querySelector("#grid-container");
 
 insertSquareGridElements(grid, squareGridSize);
