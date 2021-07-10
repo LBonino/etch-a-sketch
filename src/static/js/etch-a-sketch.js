@@ -1,3 +1,7 @@
+function paintElement() {
+    this.style.backgroundColor = this.dataset.color;
+}
+
 function insertSquareGridElements(grid, squareGridSize) {
     grid.style.gridTemplate = `repeat(${squareGridSize**(1/2)}, 1fr) /
                                repeat(${squareGridSize**(1/2)}, 1fr)`;
@@ -9,6 +13,8 @@ function insertSquareGridElements(grid, squareGridSize) {
         gridElement.style.borderBottom = "solid 0.1px rgba(0, 0, 0, 0.9)";
         gridElement.style.borderRight = "solid 0.1px rgba(0, 0, 0, 0.9)";
         grid.appendChild(gridElement);
+        
+        gridElement.addEventListener("mouseenter", paintElement);
     }
 }
 
