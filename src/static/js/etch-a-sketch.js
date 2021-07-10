@@ -27,4 +27,10 @@ grid.dataset.color = "black";
 
 const colorPicker = document.querySelector("#color-picker");
 colorPicker.addEventListener("input", changeColor);
+
+const randomColorButton = document.querySelector("#random-color");
+randomColorButton.addEventListener("click", () => {
+    grid.dataset.color = "random";
+})
+
 insertSquareGridElements(grid, squareGridSize);
