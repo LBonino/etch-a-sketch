@@ -1,3 +1,12 @@
+function clearGrid() {
+    const gridElements = Array.from(grid.children);
+    gridElements.forEach(gridElement => {
+        gridElement.style.backgroundColor = "white";
+    });
+
+    resetGridEventListeners();
+}
+
 function resetGridEventListeners() {
     const gridElements = document.querySelectorAll(".grid-element");
     gridElements.forEach(gridElement => {
