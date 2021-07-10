@@ -1,3 +1,11 @@
+function resetGridEventListeners() {
+    const gridElements = document.querySelectorAll(".grid-element");
+    gridElements.forEach(gridElement => {
+        gridElement.removeEventListener("mouseenter", paintElement);
+        gridElement.addEventListener("mouseenter", paintElement, {once: true});
+    });
+}
+
 function getRandomRgbString() {
     function getRandomRgb() {
         return Math.floor(Math.random() * 256);
@@ -13,11 +21,7 @@ function paintElement() {
 
 function changeColor() {
     grid.dataset.color = (this.id === "random-color") ? "random" : this.value;
-    const gridElements = document.querySelectorAll(".grid-element");
-    gridElements.forEach(gridElement => {
-        gridElement.removeEventListener("mouseenter", paintElement);
-        gridElement.addEventListener("mouseenter", paintElement, {once: true});
-    })
+    resetGridEventListeners();
 }
 
 function insertSquareGridElements(grid, squareGridSize) {
@@ -44,5 +48,8 @@ colorPicker.addEventListener("input", changeColor);
 
 const randomColorButton = document.querySelector("#random-color");
 randomColorButton.addEventListener("click", changeColor)
+
+const clearGridButton = document.querySelector("#clear-grid");
+clearGridButton.addEventListener("click", clearGrid);
 
 insertSquareGridElements(grid, squareGridSize);
