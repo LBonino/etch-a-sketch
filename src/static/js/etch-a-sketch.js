@@ -13,6 +13,11 @@ function paintElement() {
 
 function changeColor() {
     grid.dataset.color = (this.id === "random-color") ? "random" : this.value;
+    const gridElements = document.querySelectorAll(".grid-element");
+    gridElements.forEach(gridElement => {
+        gridElement.removeEventListener("mouseenter", paintElement);
+        gridElement.addEventListener("mouseenter", paintElement, {once: true});
+    })
 }
 
 function insertSquareGridElements(grid, squareGridSize) {
