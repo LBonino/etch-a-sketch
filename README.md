@@ -21,7 +21,7 @@ Lets the user pick a specific color.
 
 To paint a square just hover over it.
 
-### Preview
+## Preview
 ![A screenshot of a grid with a half colored with random colors and the other half completely white](src/static/img/preview2.png)
 
 ![A screenshot of a 3x3 grid with each row colored in red, green and blue respectively](src/static/img/preview1.png)
