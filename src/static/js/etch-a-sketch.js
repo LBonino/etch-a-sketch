@@ -1,3 +1,19 @@
+function resizeGrid() {
+    let inputNumber = Number(prompt("Enter number of squares per " + 
+                                          "dimension (min: 1 - max: 100):"));
+    
+    switch (true) {
+        case !(Number.isInteger(inputNumber)):
+            return alert("Input value must be an integer");
+        case (inputNumber < 1 || inputNumber > 100):
+            return alert("Input value must be between 1 and 100");
+        default:
+            grid.innerHTML = "";
+            let newSquareGridSize = inputNumber ** 2;
+            insertSquareGridElements(grid, newSquareGridSize);
+    }
+}
+
 function clearGrid() {
     const gridElements = Array.from(grid.children);
     gridElements.forEach(gridElement => {
@@ -14,6 +30,8 @@ function resetGridEventListeners() {
         gridElement.addEventListener("mouseenter", paintElement, {once: true});
     });
 }
+
+
 
 function getRandomRgbString() {
     function getRandomRgb() {
@@ -60,5 +78,8 @@ randomColorButton.addEventListener("click", changeColor)
 
 const clearGridButton = document.querySelector("#clear-grid");
 clearGridButton.addEventListener("click", clearGrid);
+
+const resizeGridButton = document.querySelector("#resize-grid");
+resizeGridButton.addEventListener("click", resizeGrid);
 
 insertSquareGridElements(grid, squareGridSize);
