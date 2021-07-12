@@ -11,6 +11,7 @@ function resizeGrid() {
             grid.innerHTML = "";
             let newSquareGridSize = inputNumber ** 2;
             insertSquareGridElements(grid, newSquareGridSize);
+            resetGridEventListeners();
     }
 }
 
